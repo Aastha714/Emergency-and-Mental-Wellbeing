@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Poppins", Times, serif; /* Set Times New Roman for body */
+  height: 100vh;
+  background-color: #f6f6f6;
+}
+
+@layer components {
+  .main {
+    @apply flex bg-white w-[1318px] h-[661px] m-auto mt-11 drop-shadow-md;
+  }
+
+  .left-image {
+    @apply w-full md:w-1/2 h-1/2 md:h-full;
+  }
+
+  .right {
+    @apply w-full md:w-1/2 h-1/2 md:h-full;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInDelayed {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Utility classes */
+  .animate-fade-in {
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 1.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 1.5s ease-out;
+  }
+
+  .animate-pop {
+    animation: pop 0.8s ease-in-out;
+  }
+
+  .animate-zoom-in {
+    animation: fadeIn 1.5s ease-in-out, pop 1.2s ease-in-out;
+  }
+
+  .animate-fade-in-delayed {
+    animation: fadeInDelayed 3s ease-in-out;
+  }
+}
